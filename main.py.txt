@@ -1,0 +1,38 @@
+import numpy as np
+
+# Step 1: Create a dataset of student scores (10 students, 3 subjects)
+scores = np.array([
+    [88, 92, 85],   # Student 1
+    [76, 80, 70],   # Student 2
+    [95, 94, 90],   # Student 3
+    [60, 62, 58],   # Student 4
+    [85, 87, 80],   # Student 5
+    [70, 72, 68],   # Student 6
+    [90, 92, 91],   # Student 7
+    [58, 55, 60],   # Student 8
+    [77, 79, 75],   # Student 9
+    [80, 83, 78]    # Student 10
+])
+
+# Step 2: Perform data manipulations
+
+# Calculate the average score for each student
+average_scores = np.mean(scores, axis=1)
+print("Average Scores for Each Student:")
+print(average_scores)
+
+# Calculate the overall average score in each subject
+subject_averages = np.mean(scores, axis=0)
+print("\nAverage Scores in Each Subject:")
+print(subject_averages)
+
+# Calculate pass/fail based on an average score threshold
+pass_threshold = 70
+pass_fail = average_scores >= pass_threshold
+print("\nPass/Fail Status for Each Student:")
+print(pass_fail)
+
+# Filter the students who passed
+passed_students = scores[pass_fail]
+print("\nScores of Students Who Passed:")
+print(passed_students)
